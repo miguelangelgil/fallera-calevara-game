@@ -9,57 +9,96 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <script src="./lib/JQuery.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    
 </head>
 
 <body>
+    <div id="app">
+        <br>
+        <div class="d-flex justify-content-center">
+            <div class="col-4">
+            <div class="card">
+                <div class="card-header d-flex justify-content-center">
+                    <p >Nick name</p>
+                </div>
+                <div class="card-body d-flex justify-content-center">
+                    <input v-model = "name_owner">
+                    <button class="btn btn-primary" v-on:click="button_new_room">New Room</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <br>
+        <div class="d-flex justify-content-center">
+            <div class="col-4"> 
+            <div class="card">
+                <div class="card-header d-flex justify-content-center">
+                <p>Join to a room</p>
+                </div>
+                <div class="card-body d-flex justify-content-center">
+                    <p>ID Room</p>
+                    <input v-mode = "id_room">
+                    <p>Nick name</p>
+                    <input v-mode = "name_player">
+                    <button class="btn btn-primary" v-on:click="button_join">Join</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+    </div>
+
+  
+
+  <!-- Footer -->
+
+  <div class="col-12" id="Autor">
+    Copyright 2020 - MAGMa (Miguel Ángel Gil Martín)</div>
+
+
+<!-- Background circles -->
+<ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
 
 
 
 
-    <!--FIREBASE CONECTION-->
-
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-        https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
-
-    <script>
-    // Your web app's Firebase configuration
-    
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-    </script>
-    <!--END FIREBASE CONECTION -->
-
-    <!-- Footer -->
-
-    <div class="col-12" id="Autor">
-        Copyright 2020 - MAGMa (Miguel Ángel Gil Martín)</div>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 
 
-    <!-- Background circles -->
-    <ul class="circles">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDQfW4JI3qfpPxauVj9UjZsG3J5EQ66vw8",
+    authDomain: "fallera-calavera.firebaseapp.com",
+    databaseURL: "https://fallera-calavera.firebaseio.com",
+    projectId: "fallera-calavera",
+    storageBucket: "fallera-calavera.appspot.com",
+    messagingSenderId: "806106577610",
+    appId: "1:806106577610:web:084eabd5c9ebd9abe15233",
+    measurementId: "G-WS7LJY8SQQ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 
-    <script src="./code/user.js"></script>
-    <script src="./code/db.js"></script>
-    <script src="./code/data.js"></script>
-    <script src="./code/code.js"></script>
-    <script src="./code/app.js"></script>
+</script>  
+<script src="./code/db.js"></script>
+<script src="./code/room.js"></script>
+<script src="./code/loging.js"></script>
 
 </body>
 
